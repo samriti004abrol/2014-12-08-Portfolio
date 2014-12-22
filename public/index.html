@@ -1,4 +1,4 @@
-<html ng-app="">
+<html ng-app='portfolio'>
 <head>
 	<title>Milan Pal Singh || Resume</title>
 	<script type="text/javascript" src ="js/lib/angular.js"></script>
@@ -11,7 +11,10 @@
 	<script type="text/javascript" src ="js/lib/angular-loader.js"></script>
 	<script type="text/javascript" src ="js/lib/angular-cookies.js"></script>
 	<script type="text/javascript" src ="js/lib/angular-animate.js"></script>
-	<script type="text/javascript" src ="js/bootstrap.js"></script>
+	<!-- // <script type="text/javascript" src ="js/bootstrap.js"></script> -->
+
+	<script type="text/javascript" src="js/controllers/app.js"></script>
+	<script type="text/javascript" src="js/portfolioApp.js"></script>
 
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap-theme.css"/>
@@ -20,89 +23,10 @@
 	<script type="text/javascript" src ="js/lib/less.js"></script>
 </head>
 <body>
-	<div class="container">
+	<div class="container" ng-controller="AppCtrl">
 		<h1 class="hidden">Milan Pal Singh</h1>
-		<div>
-			<h2 class="text-center">Resume</h2>
-			<section class="clearfix">
-				<ul class="list-inline pull-right">
-					<li><a href="http://in.linkedin.com/pub/milan-pal-singh/69/a21/4b9">LinkedIN</a></li>
-					<li><a href="http://www.google.com">G+</a></li>
-				</ul>
-			</section>
-			<section class="">
-				<h3 class="bg-info">Summary</h3>
-				<ul class=''>
-					<li>3+ years of experience in responsive and adaptive web development.</li>
-					<li>Strong experience in maintaining cross-browser compatibility (IE, Firefox, Chrome, Safari, mobile).</li>
-					<li>Created seamless responsive and mobile sites using latest technologies.</li>
-					<li>Good analytical, problem solving, organizational, interpersonal, verbal & written communication skills, and is an effective team player, yet able to work independently.</li>
-					<li>A continual desire to learn and expand horizons and the ability to work without supervision.</li>
-				</ul>
-			</section>
-			<section>
-				<h3>Skils</h3>
-				<article>
-					<h4>Languages</h4>
-					<ul>
-						<li>HTML</li>
-						<li>CSS</li>
-						<li>JQuery</li>
-						<li>Java Script</li>
-						<li>AJAX</li>
-					</ul>
-				</article>
-				<article>
-					<h4>Frameworks</h4>
-					<ul>
-						<li>LESS</li>
-						<li>AngulerJs</li>
-					</ul>
-				</article>
-			</section>
-			<section>
-				<h3>Education</h3>
-				<article>
-					<h4>Higher Secondry School</h4><span>2005</span>
-					<div class="hide">
-						<p>2005</p>
-					</div>
-				</article>
-				<article>
-					<h4>Senior Higher Secondry School</h4><span>2007</span>
-					<div class="hide">
-						<p>2007</p>
-					</div>
-				</article>
-				<article>
-					<h4>Bachelor of Engineering</h4><span>2007</span>
-					<div class="hide">
-						<p>2011</p>
-					</div>
-				</article>
-			</section>
-			<section>
-				<h3>Work Experience</h3>
-				<article>
-					<h4>Techaspect Pvt.</h4>
-					<span>2012 -- present</span>
-				</article>
-			</section>
-			<section>
-				<h3>Projects</h3>
-				<article>
-					<h4>Humana</h4>
-					<span>2013 -- present</span>
-					<section>
-						<h5>Team members</h5>
-						<ul>
-							<li>Samriti abrol</li>
-							<li>Milan Pal Singh</li>
-						</ul>
-					</section>
-				</article>
-			</section>
-		</div>
+		
+		<div ng-view></div>		
 	</div>
 </body>
 </html>
