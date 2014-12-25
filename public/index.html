@@ -26,7 +26,14 @@
 <body>
 	<div class="container" ng-controller="AppCtrl">
 		<h1 class="text-center">Milan Pal Singh</h1>
-		
+		<ul class="nav nav-pills">
+			<li ng-class='homeActive'>
+				<a href="#/">Home</a></li>
+			<li ng-class='resumeActive'>
+				<a href="#/resume">Resume</a></li>
+			<li ng-class='errorActive'>
+				<a href="#/error">Error</a></li>
+		</ul>
 		<div ng-view></div>		
 	</div>
 </body>
