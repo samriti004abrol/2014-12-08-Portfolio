@@ -6,17 +6,10 @@
 					<li><a href="http://www.google.com">G+</a></li>
 				</ul>
 			</section>
-			<section class="">
-				<h3 class="">Summary</h3>
-				<ul class=''>
-					<li>3+ years of experience in responsive and adaptive web development.</li>
-					<li>Strong experience in maintaining cross-browser compatibility (IE, Firefox, Chrome, Safari, mobile).</li>
-					<li>Created seamless responsive and mobile sites using latest technologies.</li>
-					<li>Good analytical, problem solving, organizational, interpersonal, verbal & written communication skills, and is an effective team player, yet able to work independently.</li>
-					<li>A continual desire to learn and expand horizons and the ability to work without supervision.</li>
-				</ul>
-			</section>
-			<section>
+			<p ng-repeat="heading in resumeHeadings">{{heading}}</p>
+			<h2 ng-repeat="h in resumeHeadings">{{ h.val  }}</h2>
+			
+			<section >
 				<h3>Skils</h3>
 				<article>
 					<h4>Languages</h4>
