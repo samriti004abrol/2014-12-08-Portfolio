@@ -1,45 +1,48 @@
 // Defining Anguler module. Called on portfolioApp.js 
 var resumeCtrs = angular.module('resumeCtrs', []);
 
-var resumeHeadings = [];
 
 // Defining controller for URL '/resume'. Called on portfolioApp.js routing.
 resumeCtrs.controller('ResumeBuildCtrl', ['$scope', '$http',
   	function($scope, $http) {
   		// main navigation - set resume tab active
   		$scope.setActive('resume');
+    	$scope.setMainMenu('show');
 
-  		$scope.resume= {};
+  		$scope.resume = [];
+  		
 
 	    console.log($scope.config.resume);
 	    
 	    // read resume config file
 	    $http.get($scope.config.resume).success(function(data) {
 	    	for (var key in data) {
-			   resumeHeadings.push(key);
-			   $scope[key]={};
-			   $scope[key].val = "value";
+	    		var resumeSubObj = {}
+				resumeSubObj.key = key;
+				console.log(data[key]);
+				$scope.resume.push(resumeSubObj);
+				getResumeSubObj( $scope, $http, data[key] , $scope.resume.length -1 );
 			}
 
-			   console.log($scope.Skill.val);
+			console.log($scope.resume);
 
-			// demo($scope, $http);
 		  //   $http.get('res/resume/skills.json').success(function(data) {
 		  //   	for (var key in data) {
 			 //   		resumeHeadings.push(key);
 				// }
 		  //   });
 
-			$scope.resumeHeadings = resumeHeadings;
-			$scope.resumeConfig = data;
-	    	console.log(resumeHeadings);
+			// $scope.resumeHeadings = resumeHeadings;
+			// $scope.resumeConfig = data;
+	  //   	console.log(resumeHeadings);
 	    });
 }]);
 
-var demo = function($scope, $http){
-	$http.get('res/resume/skills.json').success(function(data) {
-		for (var key in data) {
-	   		resumeHeadings.push(key);
-		}
+
+var getResumeSubObj = function($scope, $http, file, key){
+	$http.get('res/resume/'+file+'.json').success(function(data) {
+		$scope.resume[key].value = data;
+    }).error(function(data){
+    	console.error("file not found for " + file);
     });	
 };

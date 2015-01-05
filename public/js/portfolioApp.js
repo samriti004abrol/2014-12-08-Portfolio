@@ -12,14 +12,14 @@ var app = angular.module('portfolio', [
 app.config(['$routeProvider', 
     function($routeProvider) {
         $routeProvider.
+        when('/', {
+            templateUrl: 'partials/home.html',
+            controller: 'HomeCtrl'
+        }).
         // Resume Page.
         when('/resume', {
             templateUrl: 'partials/resume.html',
             controller: 'ResumeBuildCtrl'
-        }).
-        when('/', {
-            templateUrl: 'partials/home.html',
-            controller: 'HomeCtrl'
         }).
         // handelling InValid URL.
         otherwise({

@@ -6,7 +6,7 @@
 					<li><a href="http://www.google.com">G+</a></li>
 				</ul>
 			</section>
-			<p ng-repeat="heading in resumeHeadings">{{heading}}</p>
+			<p ng-repeat="r in resume">{{ r.key}} : {{ r.value }}</p>
 			<h2 ng-repeat="h in resumeHeadings">{{ h.val  }}</h2>
 			
 			<section >
