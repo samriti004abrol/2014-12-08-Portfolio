@@ -20,12 +20,14 @@
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap.css"/>
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap-theme.css"/>
 	<link rel="stylesheet/less" type="text/css" href="styles/color.less"/>
+	<link rel="stylesheet/less" type="text/css" href="styles/main.less"/>
+	<link rel="stylesheet/less" type="text/css" href="styles/home.less"/>
 	
 	<script type="text/javascript" src ="js/lib/less.js"></script>
 </head>
 <body>
+	<div class="top-bar "><h1 class="text-center x0-top x0">Milan Pal Singh</h1></div>
 	<div class="container" ng-controller="AppCtrl">
-		<h1 class="text-center">Milan Pal Singh</h1>
 		<ul class="nav nav-pills" ng-class="menuActive">
 			<li ng-class='homeActive'>
 				<a href="#/">Home</a></li>
@@ -35,6 +37,12 @@
 				<a href="#/error">Error</a></li>
 		</ul>
 		<div ng-view></div>		
+	</div>
+	<div class="bottom-bar ">
+		<p class="text-center x0-top x0">&copy; 2015 || Developed by - 
+			<a href="mailto:milanpalsingh89@gmail.com" target="_top" class="color-green">Milan</a> 
+			and 
+			<a href="mailto:samriti004abrol@gmail.com" target="_top" class="color-green">Samriti</a></p>
 	</div>
 </body>
 </html>
